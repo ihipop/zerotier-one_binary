@@ -1,4 +1,4 @@
-# zerotier-one Binary
+# [ZeroTier-One](https://github.com/zerotier/ZeroTierOne) Binary
 Release static build of zerotier-one binary
 
 ## Download example

@@ -1,5 +1,5 @@
 # [ZeroTier-One](https://github.com/zerotier/ZeroTierOne) Binary
-Release static build of zerotier-one binary
+Release static build of ZeroTier-One binary
 
 ## Download example
 

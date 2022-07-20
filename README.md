@@ -1,9 +1,9 @@
 # [ZeroTier-One](https://github.com/zerotier/ZeroTierOne) Binary
-Release static build of ZeroTier-One binary
+Release **STATIC**  build of ZeroTier-One binary
 
 ## Download example
 
-`wget https://github.com/ihipop/zerotier-one_binary/releases/download/v1.8.2/zerotier-one.x86_64-linux-gnu -O zerotier-one && chmod +x zerotier-one`
+`wget https://github.com/ihipop/zerotier-one_binary/releases/download/v1.10.1/zerotier-one_x86_64-linux-gnu_static.tar.gz -O zerotier-one.tar.gz`
 
 
 ## Where is `zerotier-cli` and `zerotier-idtool` below version 2.0 ?
@@ -17,12 +17,13 @@ ln -sf zerotier-one zerotier-idtool
  
  
  ## File info example
- ```
- zerotier-one.aarch64-linux-gnu:       ELF 64-bit LSB executable, ARM aarch64, version 1 (GNU/Linux), statically linked, BuildID[sha1]=689fc5d63553007ae875b94c1d75c6ae254f00a9, for GNU/Linux 3.7.0, stripped
-zerotier-one.arm-linux-gnueabihf:     ELF 32-bit LSB executable, ARM, EABI5 version 1 (GNU/Linux), statically linked, BuildID[sha1]=60c86f362b6c8e122cc950a8ba83effa3f35b811, for GNU/Linux 3.2.0, stripped
-zerotier-one.mips64el-linux-gnuabi64: ELF 64-bit LSB executable, MIPS, MIPS64 rel2 version 1 (SYSV), statically linked, BuildID[sha1]=e677088c91bf4d0c58404dbb24c1a99a0887351c, for GNU/Linux 3.2.0, stripped
-zerotier-one.mips64-linux-gnuabi64:   ELF 64-bit MSB executable, MIPS, MIPS64 rel2 version 1 (SYSV), statically linked, BuildID[sha1]=7cac0eddaf18920e46ee391cf6b18fb5cabb908b, for GNU/Linux 3.2.0, stripped
-zerotier-one.mipsel-linux-gnu:        ELF 32-bit LSB executable, MIPS, MIPS32 rel2 version 1 (SYSV), statically linked, BuildID[sha1]=43c36e31f94fde2b160416e73bb3f09ed7857120, for GNU/Linux 3.2.0, stripped
-zerotier-one.mips-linux-gnu:          ELF 32-bit MSB executable, MIPS, MIPS32 rel2 version 1 (SYSV), statically linked, BuildID[sha1]=a73843954a0649ea777a488047b3d5a5d5e1e615, for GNU/Linux 3.2.0, stripped
-zerotier-one.x86_64-linux-gnu:        ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, BuildID[sha1]=7c008d6ae6a16ee876866499d2c66d7c4ec17aeb, for GNU/Linux 3.2.0, stripped
+```
+zerotier-one_x86_64-linux-gnu_static: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, BuildID[sha1]=31a954409804c1bcbe3897ef93c089086b43dbb3, for GNU/Linux 3.2.0, stripped
+zerotier-one_i686-linux-gnu_static: ELF 32-bit LSB executable, Intel 80386, version 1 (GNU/Linux), statically linked, BuildID[sha1]=5e06df489de8912b16a706cf4d936a541cb9a5f5, for GNU/Linux 3.2.0, stripped
+zerotier-one_aarch64-linux-gnu_static: ELF 64-bit LSB executable, ARM aarch64, version 1 (GNU/Linux), statically linked, BuildID[sha1]=da92010189c8938ecf9258ed9ae1678abb97970f, for GNU/Linux 3.7.0, stripped
+zerotier-one_arm-linux-gnueabihf_static: ELF 32-bit LSB executable, ARM, EABI5 version 1 (GNU/Linux), statically linked, BuildID[sha1]=ed0e9b9a840e3a39522d4e5dbb0bae1250d960e0, for GNU/Linux 3.2.0, stripped
+zerotier-one_mips-linux-gnu_static: ELF 32-bit MSB executable, MIPS, MIPS32 rel2 version 1 (GNU/Linux), statically linked, BuildID[sha1]=aa1760ebe4d66f73c2bf73faf1a06710a16a4259, for GNU/Linux 3.2.0, stripped
+zerotier-one_mips64-linux-gnuabi64_static: ELF 64-bit MSB executable, MIPS, MIPS64 rel2 version 1 (GNU/Linux), statically linked, BuildID[sha1]=13899888d63e9534519a1c9e2279a723f23d2d84, for GNU/Linux 3.2.0, stripped
+zerotier-one_mipsel-linux-gnu_static: ELF 32-bit LSB executable, MIPS, MIPS32 rel2 version 1 (GNU/Linux), statically linked, BuildID[sha1]=62a4e42ca62a38315f5ca8f6632d6c2b837d1a44, for GNU/Linux 3.2.0, stripped
+zerotier-one_mips64el-linux-gnuabi64_static: ELF 64-bit LSB executable, MIPS, MIPS64 rel2 version 1 (GNU/Linux), statically linked, BuildID[sha1]=1649141be1f3dbf2d4ff694793568befeb31037e, for GNU/Linux 3.2.0, stripped
 ```

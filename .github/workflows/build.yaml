@@ -1,0 +1,65 @@
+name: Build static zerotier
+on:
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      zerotier-version:
+        description: "指定版本号"
+        required: true
+        default: "1.10.1"
+      upload-artifact:
+        description: "是否上传构建产物"
+        default: "true"
+
+env:
+  TZ: Asia/Shanghai
+  DEBIAN_FRONTEND: noninteractive
+  UPLOAD_ARTIFACT: ${{ github.event.inputs.upload-artifact }}
+  TARGET_DIR: "${{ github.workspace }}/target"
+jobs:
+  make-static:
+    name: Build static zerotier
+    runs-on: ubuntu-22.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - name: Initialization Environment
+        run: |
+          echo $CUSTOM_VERSION
+          git clone --depth=1 -b ${{ github.event.inputs.zerotier-version }} https://github.com/zerotier/ZeroTierOne ZeroTierOne-src
+          pwd
+          cd ZeroTierOne-src
+          sudo chown $USER:$GROUPS $GITHUB_WORKSPACE
+      - name: Show Disk Space
+        run: |
+          df -hT
+      - name: Build
+        id: compile
+        # if: (!cancelled())
+        run: |
+          pwd
+          echo $TARGET_DIR
+          cd $GITHUB_WORKSPACE/ZeroTierOne-src
+          sudo -E bash ../build.sh && \
+          echo "::set-output name=status::success"
+      - name: Upload ARTIFACT
+        uses: actions/upload-artifact@v3
+        if: steps.compile.outputs.status == 'success' && env.UPLOAD_ARTIFACT == 'true'
+        with:
+          name: ZeroTierOne-static
+          path: |
+            ${{ env.TARGET_DIR }}/
+          retention-days: 5
+          if-no-files-found: error
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: ${{ env.TARGET_DIR }}"/*.gz"
+      - name: Delete workflow runs
+        uses: GitRML/delete-workflow-runs@main
+        with:
+          retain_days: 5
+          keep_minimum_runs: 5
